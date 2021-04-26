@@ -13,9 +13,9 @@
         </div>
         <div id="nav-mid">
             <ul>
-                <li><a href=#>Home</a></li>  
-                <li><a href="searchfield.php">Search</a></li> 
-                <li><a href="#">Library</a></li> 
+                <li><a href=inde.php><img src="img/homeIcon.png" width="45vw" alt="">Home</a></li>  
+                <li><a href="searchfield.php"><img src="img/searchIcon.png" width="45vw" alt="">Search</a></li> 
+                <li><a href="#"><img src="img/libraryIcon.png" width="45vw" alt="">Library</a></li> 
             </ul>         
         </div>
         <div is="playlst">
@@ -23,13 +23,22 @@
         </div>
     </nav>
     <div id="main">
-        <div class="main-item"></div>
-        <div class="main-item"></div>
-        <div class="main-item"></div>
-        <div class="main-item"></div>
-        <div class="main-item"></div>
-        <div class="main-item"></div>
-        <div class="main-item"></div>
+        <div id="top"></div>
+        <div id="main-items">
+            <div class="main-item">
+                <?php
+                    echo"SELECT thumbnail FROM songs WHERE "
+                ?>
+            </div>
+            <div class="main-item"></div>
+            <div class="main-item"></div>
+            <div class="main-item"></div>
+            <div class="main-item"></div>
+            <div class="main-item"></div>
+            <div class="main-item"></div>
+            <div class="main-item"></div>
+        </div>
+
     </div>
     <div id="player">
 
