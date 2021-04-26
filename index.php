@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Z-I-fy</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
     <nav id = left>
@@ -25,11 +25,7 @@
     <div id="main">
         <div id="top"></div>
         <div id="main-items">
-            <div class="main-item">
-                <?php
-                    echo"SELECT thumbnail FROM songs WHERE "
-                ?>
-            </div>
+            <div class="main-item"></div>
             <div class="main-item"></div>
             <div class="main-item"></div>
             <div class="main-item"></div>
