@@ -25,19 +25,30 @@
     <div id="main">
         <div id="top"></div>
         <div id="main-items">
-            <div class="main-item"></div>
-            <div class="main-item"></div>
-            <div class="main-item"></div>
-            <div class="main-item"></div>
-            <div class="main-item"></div>
-            <div class="main-item"></div>
-            <div class="main-item"></div>
-            <div class="main-item"></div>
+            <?php
+                require_once("config.php");
+
+                $sql = "SELECT songs.thumbnail, songs.title, artists.band
+                        FROM songs
+                            JOIN songs_artists ON songs.id = songs_artists.songs_id
+                            JOIN artists ON artists.id = songs_artists.artists_id";
+
+                $result = $conn->query($sql);
+                $sth = mysqli_fetch_array($result);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div class=main-item><img width=250fr src="data:image/jpeg;base64,'.base64_encode( $sth['thumbnail'] ).'"/><h2>' . $row['title'] . '</h2><h3>' . $row['band'] . '</h3></div>';
+                        }
+                    }
+                    else {
+                        echo "<h1>Error 404: FUck off</h1>";
+                    }
+            ?>
         </div>
 
     </div>
     <div id="player">
-
+            <h3>Fuck me</h3>
     </div>
 </body>
 </html>

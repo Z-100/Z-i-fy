@@ -97,27 +97,28 @@ thead {
     border-bottom: 0.1vh solid aliceblue;
 }
 th, td {
-    margin-left: 10vw;
+    width: 15vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    text-align: center;
 }
 th#count, td#count {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    width: 10vw;
+    text-align: left;
+    padding-right: 0.1vw;
 }
 th#title, td#title {
-    padding-right: 10rem;
-    padding-left: 10rem;
+    width: 15vw;
+    padding-left: 0.1vw;
 }
 th#album, td#album {
-    padding-right: 10rem;
-    padding-left: 10rem;
+    width: 15vw;
 }
-th#artist, td#artist {
-    padding-right: 10rem;
-    padding-left: 10rem;
+td#artist, td#artist {
+    width: 15vw;
 }
 th#duration, td#duration {
-    padding-right: 10rem;
-    padding-left: 10rem;
+    width: 15vw;
 }
 tr {
     margin: 1vw;
