@@ -15,9 +15,9 @@
         </div>
         <div id="nav-mid">
             <ul>
-                <li><a>Home</a></li>  
-                <li><a>Search</a></li> 
-                <li><a>Libary</a></li> 
+                <li><a href=index.php><img src="img/homeIcon.png" width="45vw" alt="">Home</a></li>  
+                <li><a href="searchfield.php"><img src="img/searchIcon.png" width="45vw" alt="">Search</a></li> 
+                <li><a href="#"><img src="img/libraryIcon.png" width="45vw" alt="">Library</a></li> 
             </ul>         
         </div>
         <div is="playlst">
@@ -50,8 +50,8 @@
                             echo "<tbody>";
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<tr>";
-                                        echo "<td id=count>" . $row['id'] . "</td";
-                                        echo "<td id=title>" . $row['title'  ] . "</td>";
+                                        echo "<td id=count>" . $row['id'] . "</td>";
+                                        echo "<td id=title>" . $row['title'] . "</td>";
                                         echo "<td id=album>" . $row['name'] . "</td>";
                                         echo "<td id=artist>" . $row['band'] . "</td>";
                                         echo "<td id=duration>" . $row['duration'] . "</td>";
