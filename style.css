@@ -54,20 +54,39 @@ body {
 
 #left #nav-mid ul li{
     padding-bottom: 10%;
-    text-decoration: none;
     list-style-type: none;
 }
 
 #left #nav-mid ul li a{
     font-size: 1.25rem;
+    color: aliceblue;
+    text-decoration: none;
 }
 
 #main {
     position: fixed;
+    padding-left: 1.25vw;
     top: 0;
-    left: 20;
+    right: 1.25vw;
+    width: 77.5vw;
     height: 90vh;
-    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 3fr);
+    grid-column-gap: 1.25vw;
+    grid-row-gap: 2.5vh;
+    overflow: scroll;
+    
+}
+
+#main::-webkit-scrollbar {
+    display: none;
+}
+
+.main-item {
+    height: 2fr;
+    width: 1fr;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 #player {

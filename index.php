@@ -13,9 +13,9 @@
         </div>
         <div id="nav-mid">
             <ul>
-                <li><a>Home</a></li>  
-                <li><a>Search</a></li> 
-                <li><a>Libary</a></li> 
+                <li><a href=#>Home</a></li>  
+                <li><a href="searchfield.php">Search</a></li> 
+                <li><a href="#">Library</a></li> 
             </ul>         
         </div>
         <div is="playlst">
@@ -23,7 +23,13 @@
         </div>
     </nav>
     <div id="main">
-    
+        <div class="main-item"></div>
+        <div class="main-item"></div>
+        <div class="main-item"></div>
+        <div class="main-item"></div>
+        <div class="main-item"></div>
+        <div class="main-item"></div>
+        <div class="main-item"></div>
     </div>
     <div id="player">
 
