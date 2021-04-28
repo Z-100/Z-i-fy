@@ -61,10 +61,25 @@
         </div>
         <div id="main-items">
             <?php
+                require_once "config.php";
+                $sql = "SELECT *
+                        FROM playlists WHERE id = 1";
 
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $image = imagecreatefromstring($row['plp']); 
+                        ob_start();
+                        imagejpeg($image, null, 80);
+                        $data = ob_get_contents();
+                        ob_end_clean();
+                        echo '<div class=main-item><img  id="plp" src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . '<p>' . $row['name'] . '</p></div>';
+                        //Use img#pfp in .css file
+                    }
+                } else {
+
+                }
             ?>
-
-
         </div>
 
     </div>
