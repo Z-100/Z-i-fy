@@ -46,12 +46,18 @@
             <?php
                 require_once "config.php";
                 $sql = "SELECT *
-                        FROM users WHERE id = 1";
+                        FROM users WHERE id = 2";
 
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                            echo "<p>" . $row['username'] . "</p>";
+                        $image = imagecreatefromstring($row['pfp']); 
+                        ob_start();
+                        imagejpeg($image, null, 80);
+                        $data = ob_get_contents();
+                        ob_end_clean();
+                        echo '<img id=pfp src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . '<p>' . $row['username'] . '</p>';
+                        //Use img#pfp in .css file
                     }
                 } else {
 

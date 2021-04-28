@@ -17,7 +17,7 @@
             <ul>
                 <li><a href=index.php><img src="img/homeIcon.png" width="45vw" alt="">Home</a></li>  
                 <li><a href="searchfield.php"><img src="img/searchIcon.png" width="45vw" alt="">Search</a></li> 
-                <li><a href="#"><img src="img/libraryIcon.png" width="45vw" alt="">Library</a></li> 
+                <li><a href="library.php"><img src="img/libraryIcon.png" width="45vw" alt="">Library</a></li> 
             </ul>         
         </div>
         <div is="playlst">
