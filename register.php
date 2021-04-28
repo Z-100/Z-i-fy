@@ -29,6 +29,12 @@
                     <label for="password">password</label>
                     <input type="password" id="password" name="password">
 
+                    <label for="password">Confirm password</label>
+                    <input type="password" id="confirmpassword" name="confirmpassword">
+
+                    <label for="token">Token</label>
+                    <input type="text" id="token" name="Token">
+
                     <input type="submit">
                 </form>
         </div>
