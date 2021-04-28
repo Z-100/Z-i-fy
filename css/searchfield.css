@@ -64,6 +64,7 @@ body {
 }
 
 #main {
+    background: linear-gradient(180deg, rgba(180, 180, 180, 0.719) 8%, rgb(87, 87, 87) 50%, rgba(0,0,0,1) 96%);
     position: fixed;
     padding-left: 1.25vw;
     top: 0;

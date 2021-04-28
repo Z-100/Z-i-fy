@@ -19,12 +19,11 @@
             </ul>         
         </div> 
         <div id="playlist">
-            <?php 
-            // on Work
+            <?php
              $currenUser = 1;
                 require_once "config.php";
                 $sql = "SELECT name
-                        FROM playlists WHERE user_id = 1";
+                        FROM playlists WHERE user_id = 2"; //Change user_id to value of the current logged in user
 
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
@@ -35,7 +34,7 @@
 
                     }
                 } else {
-
+                    echo "<p>You haven't created any playlists yet!</p>";
                 }
             ?>
         </div>
@@ -51,7 +50,13 @@
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                            echo "<p>" . $row['username'] . "</p>";
+                        $image = imagecreatefromstring($row['pfp']); 
+                        ob_start();
+                        imagejpeg($image, null, 80);
+                        $data = ob_get_contents();
+                        ob_end_clean();
+                        echo '<p><img id=pfp src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . $row['username'] . '</p>';
+                        //Use img#pfp in .css file
                     }
                 } else {
 
@@ -70,20 +75,20 @@
 
                 $result = $conn->query($sql);
                 $sth = mysqli_fetch_array($result);
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo '<div class=main-item><img id="outputImg" width=75% src="data:image/jpeg;base64,'.base64_encode( $sth['thumbnail'] ).'"/><h2>' . $row['title'] . '</h2><h3>' . $row['band'] . '</h3></div>';
-                        }
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<div class=main-item><img id="outputImg" width=75% src="data:image/jpeg;base64,'.base64_encode( $sth['thumbnail'] ).'"/><h2>' . $row['title'] . '</h2><h3>' . $row['band'] . '</h3></div>';
                     }
-                    else {
-                        echo "<h1>Error 404: FUck off</h1>";
-                    }
+                }
+                else {
+                    echo "<h1>Error 404: FUck off</h1>";
+                }
             ?>
         </div>
 
     </div>
     <div id="player">
-            
+
     </div>
 </body>
 </html>
