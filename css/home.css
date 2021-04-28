@@ -63,12 +63,32 @@ body {
     text-decoration: none;
 }
 
+#left #playlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40%;
+    width: 80%;
+    padding-top: 15%;
+    padding-left: 20%;
+    font-size: 1.125rem;
+    list-style-type: none;
+    overflow: scroll;
+}
+
+#left #playlist::-webkit-scrollbar {
+    display: none;
+}
+
 #main {
+    /* farbverlauf !!*/
+    background: linear-gradient(180deg, rgba(0, 213, 255, 0.719) 8%, rgba(27,94,107,1) 50%, rgba(0,0,0,1) 96%);
     position: fixed;
     padding-left: 1.25vw;
+    padding-right: 1.25vw;
     top: 0;
-    right: 1.25vw;
-    width: 77.5vw;
+    right: 0;
+    width: 78.75vw;
     height: 90vh;
     overflow: scroll;
 }
@@ -89,6 +109,11 @@ body {
 }
 
 .main-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2%;
     height: 2fr;
     width: 1fr;
     background-color: rgba(255, 255, 255, 0.1);
@@ -107,11 +132,30 @@ body {
     border-bottom: 0.1vh solid rgba(255, 255, 255, 1);
 }
 
+#main #top #userField {
+    position: absolute;
+    right: 5%;
+    top: 12.5%;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 15%;
+    height: 75%;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#main #top #userField p{
+    margin: 0;
+}
+
 #player {
     position: fixed;
     bottom: 0;
     left: 0;
     height: 10vh;
     width: 100vw;
-    background-color: #3d423e;
+    background-color: #181818;
 }
