@@ -82,7 +82,7 @@ body {
 
 #main {
     /* farbverlauf !!*/
-    background: linear-gradient(180deg, rgba(0, 213, 255, 0.719) 8%, rgba(27,94,107,1) 50%, rgba(0,0,0,1) 96%);
+    background: linear-gradient(180deg, rgba(180, 180, 180, 0.719) 8%, rgb(87, 87, 87) 50%, rgba(0,0,0,1) 96%);
     position: fixed;
     padding-left: 1.25vw;
     padding-right: 1.25vw;
@@ -144,18 +144,11 @@ body {
     flex-direction: row;
     justify-content: left;
     align-items: center;
-    /* justify-content: space-evenly; */
+    justify-content: space-around;
 }
 
 #main #top #userField p{
     margin: 0;
-    margin-left: 15%;
-}
-
-#main #top #userField img#pfp{
-    width: 24%;
-    height: 100%;
-    border-radius: 25px;
 }
 
 #player {
