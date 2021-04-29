@@ -4,7 +4,7 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT username, password
+    $sql = "SELECT id, username, password
             FROM users
             WHERE username = '$username' AND password = '$password'";
 
@@ -13,6 +13,8 @@
         while ($row = $result->fetch_assoc()) {
             if($username = $row['username'] && $password = $row['password']) {
                 sleep(1);
+                session_start();
+                $_SESSION["id"] = $row['id'];
                 header("Location: ../php/home.php");
             }
         }

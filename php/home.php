@@ -11,59 +11,23 @@
         <div id="top">
             <img src="../img/z-i-fy_trans.png" alt="logo" id="logo"">
         </div>
+
         <div id="nav-mid">
-            <ul>
-                <li><a href=index.php><img src="../img/homeIcon.png" width="45vw" alt="">Home</a></li>  
-                <li><a href="searchfield.php"><img src="../img/searchIcon.png" width="45vw" alt="">Search</a></li> 
-                <li><a href="library.php"><img src="../img/libraryIcon.png" width="45vw" alt="">Library</a></li> 
-            </ul>         
-        </div> 
+            <?php require_once("../classes/links.php"); ?>     
+        </div>
+
         <div id="playlist">
-            <?php
-             $currenUser = 1;
-                require_once "config.php";
-                $sql = "SELECT name
-                        FROM playlists WHERE user_id = 2"; //Change user_id to value of the current logged in user
-
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<li>";
-                            echo "<a>" . $row['name'] . "</a>";
-                        echo "</li>";
-
-                    }
-                } else {
-                    echo "<p>You haven't created any playlists yet!</p>";
-                }
-            ?>
+            <?php require_once("../classes/playlists.php"); ?>
         </div>
     </nav>
+    
     <div id="main">
         <div id="top">
             <div id="userField">
-            <?php
-                require_once "config.php";
-                $sql = "SELECT *
-                        FROM users WHERE id = 2";
-
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $image = imagecreatefromstring($row['pfp']); 
-                        ob_start();
-                        imagejpeg($image, null, 80);
-                        $data = ob_get_contents();
-                        ob_end_clean();
-                        echo '<img id=pfp src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . '<p>' . $row['username'] . '</p>';
-                        //Use img#pfp in .css file
-                    }
-                } else {
-
-                }
-            ?>
+                <?php require_once("../classes/userField.php"); ?>
             </div>
         </div>
+
         <div id="main-items">
             <?php
                 require_once("config.php");
@@ -85,10 +49,10 @@
                 }
             ?>
         </div>
-
     </div>
-    <div id="player">
 
+    <div id="player">
+        <?php require_once("../classes/playlists.php"); ?>
     </div>
 </body>
 </html>

@@ -147,3 +147,42 @@ tbody {
     width: 100vw;
     background-color: #181818;
 }
+#main img#plp {
+    width: 75%;
+    height: 60%;
+}
+
+#main #top {
+    position: relative;
+    top: 0;
+    width: 99.5%;
+    height: 7.5vh;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 0.1vh solid rgba(255, 255, 255, 1);
+}
+
+#main #top #userField {
+    position: absolute;
+    right: 5%;
+    top: 12.5%;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 15%;
+    height: 75%;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    /* justify-content: space-evenly; */
+}
+
+#main #top #userField p{
+    margin: 0;
+    margin-left: 15%;
+}
+
+#main #top #userField img#pfp{
+    width: 24%;
+    height: 100%;
+    border-radius: 25px;
+}

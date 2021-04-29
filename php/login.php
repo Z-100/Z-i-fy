@@ -12,6 +12,7 @@
         <div id="top">
             <img src="../img/z-i-fy_trans.png" alt="logo" id="logo"">
         </div>
+
         <div id="nav-mid">
             <ul>
                 <li><i class="fa fa-github" style="font-size:24px"></i><a href=https://github.com/Z-100>  Z-100</a></li>  
@@ -20,29 +21,27 @@
             </ul>         
         </div> 
     </nav>
+
     <div id="mainlogin">
         <div id="login">
             <h1>Login</h1>
             <form id="input" action="../functions/login.php" method="post">
-                <!-- <label for="username">username</label> -->
                 <input type="text" id="username" name="username" placeholder="enter username">
-                <!-- <label for="password">password</label> -->
                 <input type="password" id="password" name="password" placeholder="enter password">
                 <input type="submit">
             </form>
         </div>
-            <div id="register">
-                <h1>Register</h1>
-                <form id="input" action="../functions/register.php" method="post">
-                    <!-- <label for="username">username</label> -->
-                    <input type="text" id="crusername" name="crusername" placeholder="create username">
-                    <!-- <label for="password">password</label> -->
-                    <input type="password" id="crpassword" name="crpassword" placeholder="create password">
-                    <input type="password" id="cfpassword" name="cfpassword" placeholder="confirm password">
-                    <input type="text" id="token" name="token" placeholder="enter token">
-                    <input type="submit">
-                </form>
-            </div>
+        
+        <div id="register">
+            <h1>Register</h1>
+            <form id="input" action="../functions/register.php" method="post">
+                <input type="text" id="crusername" name="crusername" placeholder="create username">
+                <input type="password" id="crpassword" name="crpassword" placeholder="create password">
+                <input type="password" id="cfpassword" name="cfpassword" placeholder="confirm password">
+                <input type="text" id="token" name="token" placeholder="enter token">
+                <input type="submit">
+            </form>
+        </div>
     </div>
 </body>
 </html>
