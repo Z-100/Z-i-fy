@@ -7,7 +7,7 @@
 <body>
     <nav id = left>
         <div id="left-top">
-            <img src="../img/z-i-fy_trans.png" alt="logo" id="logo"">
+            <img src="../img/z-i-fy_trans.png" alt="logo" id="logo">
         </div>
 
         <div id="nav-mid">
@@ -34,6 +34,9 @@
         
         <div id="register">
             <h1>Register</h1>
+            <div style="color: aliceblue;">
+                <?php echo "<p>" . @$_GET['message'] . "</p>"; ?>
+            </div>
             <form id="input" action="../functions/register.php" method="post">
                 <input type="text" id="crusername" name="crusername" placeholder="create username">
                 <input type="password" id="crpassword" name="crpassword" placeholder="create password">

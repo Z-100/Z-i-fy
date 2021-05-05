@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once("../classes/head.php"); ?>
+    <?php require_once("../classes/head.html"); ?>
     <title>Z-i-fy - Library</title>
 </head>
 <body>
