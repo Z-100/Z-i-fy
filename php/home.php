@@ -1,5 +1,6 @@
 <?php
     require_once("../functions/auth_check.php");
+    require_once("../imageAlg/dominantColour.php");
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@
         </div>
     </nav>
     
-    <div id="blue-main">
+    <div id="blue-main" style="background: linear-gradient(180deg, <?php echo $hex1; ?> 8%, <?php echo $hex2; ?> 50%, rgba(0,0,0,1) 96%)">
         <div id="top">
             <div id="userField">
                 <?php require_once("../classes/userField.php"); ?>

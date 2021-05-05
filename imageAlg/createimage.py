@@ -2,7 +2,7 @@ import os
 import sys
 from PIL import Image
 
-images = [Image.open(x) for x in ['./Database/samplePics/inutero.jpg', './Database/samplePics/nevermind.jpg', './Database/samplePics/pfp.jpg', './Database/samplePics/samplePlaylist.jpg']] #Not working
+images = [Image.open(x) for x in ['./Database/samplePics/inutero.jpg', './Database/samplePics/nevermind.jpg', './Database/samplePics/pfp.jpg', './Database/samplePics/samplePlaylist.jpg']] #Change to DB output
 widths, heights = zip(*(i.size for i in images))
 
 total_width = sum(widths)
