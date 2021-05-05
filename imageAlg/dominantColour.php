@@ -1,5 +1,5 @@
 <?php
-    $source = "../Database/samplePics/inutero.jpg"; //Change to outputfile of createimage.py
+    $source = "../test.jpg"; //Change to outputfile of createimage.py
 
     $maxheight = 300;
     $barwidth = 2;
