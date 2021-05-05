@@ -1,1 +1,3 @@
-<p><a href="../img/diegoMeme.webp">diegoMeme</a></p>
+<?php
+    echo "<p><a href=../img/diegoMeme.webp>diegoMeme</a></p>";
+?>
