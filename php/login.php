@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once("../classes/head.php"); ?>
+    <?php require_once("../classes/head.html"); ?>
     <title>Z-I-fy - Login</title>
 </head>
 <body>

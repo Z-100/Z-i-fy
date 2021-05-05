@@ -16,7 +16,7 @@
         </div>
 
         <div id="nav-mid">
-            <?php require_once("../classes/links.php"); ?>
+            <?php require_once("../classes/links.html"); ?>
         </div>
 
         <div id="playlist">

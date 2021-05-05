@@ -1,6 +1,9 @@
 <?php
+    require_once("../classes/session_start.php");
     require_once("../functions/auth_check.php");
     require_once("../imageAlg/dominantColour.php");
+    require_once("config.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +19,7 @@
         </div>
 
         <div id="nav-mid">
-            <?php require_once("../classes/links.php"); ?>     
+            <?php require_once("../classes/links.html"); ?>     
         </div>
 
         <div id="playlist">
@@ -26,15 +29,11 @@
     
     <div id="blue-main" style="background: linear-gradient(180deg, <?php echo $hex1; ?> 8%, <?php echo $hex2; ?> 50%, rgba(0,0,0,1) 96%)">
         <div id="top">
-            <div id="userField">
                 <?php require_once("../classes/userField.php"); ?>
-            </div>
         </div>
 
         <div id="main-items">
             <?php
-                require_once("config.php");
-
                 $sql = "SELECT songs.thumbnail, songs.title, artists.band
                         FROM songs
                             JOIN songs_artists ON songs.id = songs_artists.songs_id

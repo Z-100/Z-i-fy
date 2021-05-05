@@ -12,7 +12,6 @@ body {
     background-color: rgba(42, 46, 43, 1);
 }
 
-
 /* MAIN ITEMS*/
     #blue-main {
         position: fixed;
@@ -135,6 +134,11 @@ body {
             border-left: 0.1vw solid rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(1vw);
             border-radius: 7.5%;
+            transition: 0.3s ease;
+        }
+        .main-item:hover {
+            /* transition:  */
+            background-color: rgba(255, 255, 255, 0.2);
         }
         #blue-main img#plp {
             width: 30vh;
@@ -191,8 +195,8 @@ body {
         th#duration, td#duration {
             width: 15vw;
         }
-        tr {
-            margin: 1vw;
+        .trBody {
+            padding: 1vw;
         }
         tr:hover {
             background-color: rgba(34, 34, 34, 0.212);

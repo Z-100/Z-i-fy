@@ -15,7 +15,7 @@
         </div>
 
         <div id="nav-mid">
-            <?php require_once("../classes/links.php"); ?>       
+            <?php require_once("../classes/links.html"); ?>       
         </div>
 
         <div id="playlist">
@@ -55,12 +55,12 @@
                                 
                                 echo "<tbody>";
                                     while ($row = $result->fetch_assoc()) {
-                                        echo "<tr>";
-                                            echo "<td id=count>" . $row['id'] . "</td>";
-                                            echo "<td id=title>" . $row['title'] . "</td>";
-                                            echo "<td id=album>" . $row['name'] . "</td>";
-                                            echo "<td id=artist>" . $row['band'] . "</td>";
-                                            echo "<td id=duration>" . $row['duration'] . "</td>";
+                                        echo "<tr class=trBody>";
+                                            echo "<td>" . $row['id'] . "</td>";
+                                            echo "<td>" . $row['title'] . "</td>";
+                                            echo "<td>" . $row['name'] . "</td>";
+                                            echo "<td>" . $row['band'] . "</td>";
+                                            echo "<td>" . $row['duration'] . "</td>";
                                             echo "</td>";
                                         echo "</tr>";
                                     }
