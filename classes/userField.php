@@ -1,8 +1,8 @@
 <?php
     require_once("../php/config.php");
-    session_start();
+    require_once("session_start.php");
+
     $id = $_SESSION['id'];
-    // echo $id;
    
    $sql = "SELECT *
             FROM users WHERE id =" . $id;

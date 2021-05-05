@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Z-I-fy</title>
-    <link rel="stylesheet" href="../css/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <?php require_once("../classes/head.php"); ?>
+    <title>Z-I-fy - Login</title>
 </head>
 <body>
     <nav id = left>
-        <div id="top">
+        <div id="left-top">
             <img src="../img/z-i-fy_trans.png" alt="logo" id="logo"">
         </div>
 
@@ -25,6 +22,9 @@
     <div id="mainlogin">
         <div id="login">
             <h1>Login</h1>
+            <div style="color: aliceblue;">
+                <?php echo "<p>" . @$_GET['message'] . "</p>"; ?>
+            </div>
             <form id="input" action="../functions/login.php" method="post">
                 <input type="text" id="username" name="username" placeholder="enter username">
                 <input type="password" id="password" name="password" placeholder="enter password">

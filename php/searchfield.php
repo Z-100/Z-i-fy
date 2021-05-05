@@ -1,16 +1,16 @@
+<?php
+    require_once("../functions/auth_check.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
-    <link rel="stylesheet" href="../css/searchfield.css">
-    <!-- Add favicon -->
+    <?php require_once("../classes/head.php"); ?>
+    <title>Z-i-fy - Search</title>
 </head>
 <body>
-    <nav id = left>
-        <div id="top">
+    <nav id="left">
+        <div id="left-top">
             <img src="../img/z-i-fy_trans.png" alt="logo" id="logo"">
         </div>
 
@@ -23,14 +23,14 @@
         </div>
     </nav>
 
-    <div id=main>
+    <div id="grey-main">
         <div id="top">
             <div id="userField">
                 <?php require_once("../classes/userField.php"); ?>
             </div>
         </div>
 
-        <div id="songList"> <!--DO SOME CSS SHIT THIERRY-->
+        <div id="songList">
             <?php
                 require_once "config.php";
                 $sql = "SELECT songs.id, songs.title, albums.name, artists.band, songs.duration 
@@ -78,7 +78,7 @@
     </div>
 
     <div id="player">
-
+        <?php require_once("../classes/player.php"); ?>
     </div>
 </body>
 </html>

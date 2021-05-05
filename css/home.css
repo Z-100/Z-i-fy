@@ -81,7 +81,6 @@ body {
 }
 
 #main {
-    /* farbverlauf !!*/
     background: linear-gradient(180deg, rgba(0, 213, 255, 0.719) 8%, rgba(27,94,107,1) 50%, rgba(0,0,0,1) 96%);
     position: fixed;
     padding-left: 1.25vw;

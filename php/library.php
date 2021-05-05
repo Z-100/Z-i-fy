@@ -1,26 +1,29 @@
+<?php
+    require_once("../functions/auth_check.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Z-I-fy</title>
-    <link rel="stylesheet" href="../css/home.css">
+    <?php require_once("../classes/head.php"); ?>
+    <title>Z-i-fy - Library</title>
 </head>
 <body>
     <nav id = left>
-        <div id="top">
+        <div id="left-top">
             <img src="../img/z-i-fy_trans.png" alt="logo" id="logo"">
         </div>
 
         <div id="nav-mid">
-            <?php require_once("../classes/links.php"); ?>     
-        </div> 
+            <?php require_once("../classes/links.php"); ?>
+        </div>
 
         <div id="playlist">
             <?php require_once("../classes/playlists.php"); ?>
         </div>
     </nav>
-    <div id="main">
+
+    <div id="blue-main">
         <div id="top">
             <div id="userField">
                 <?php require_once("../classes/userField.php"); ?>
@@ -31,7 +34,8 @@
             <?php
                 require_once "config.php";
                 $sql = "SELECT *
-                        FROM playlists WHERE id = 1";
+                        FROM playlists 
+                        WHERE user_id = (SELECT id FROM users WHERE id =" . $_SESSION['id'] . ")";
 
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
@@ -51,7 +55,7 @@
         </div>
     </div>
     <div id="player">
-            
+        <?php require_once("../classes/player.php"); ?>
     </div>
 </body>
 </html>
