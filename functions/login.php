@@ -1,6 +1,6 @@
 <?php
-    require_once("../classes/session_start.php");
-    require_once("../php/config.php");
+    require_once("session_start.php");
+    require_once("config.php");
 
     $username = $_POST['username'];
     $password = $_POST['password'];

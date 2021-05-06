@@ -1,8 +1,8 @@
 <?php
-    require_once("session_start.php");
+    require_once("../functions/session_start.php");
+    require_once("../functions/config.php");
     
     $currenUser = 1;
-    require_once("../php/config.php");
     $sql = "SELECT *
     FROM playlists 
     WHERE user_id = (SELECT id FROM users WHERE id =" . $_SESSION['id'] . ")";

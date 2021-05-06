@@ -11,11 +11,7 @@
         </div>
 
         <div id="nav-mid">
-            <ul>
-                <li><i class="fa fa-github" style="font-size:24px"></i><a href=https://github.com/Z-100>  Z-100</a></li>  
-                <li><i class="fa fa-github" style="font-size:24px"></i><a href="https://github.com/N4choWasTaken">  N4choWasTaken</a></li> 
-                <li><i class="fa fa-github" style="font-size:24px"></i><a href="https://github.com/Z-100/Z-i-fy">  GitHub of project</a></li> 
-            </ul>         
+            <?php require_once("../classes/githublinks.html"); ?>       
         </div> 
     </nav>
 

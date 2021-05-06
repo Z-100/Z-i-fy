@@ -328,3 +328,45 @@ body {
     input:focus { 
         box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); 
     }
+
+/* Rainbow shit */
+    /* .wrapper { 
+    position: fixed;
+    padding-left: 1.25vw;
+    padding-right: 1.25vw;
+    top: 0;
+    right: 0;
+    width: 78.75vw;
+    height: 90vh;
+    overflow: scroll;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    
+    -webkit-animation: rainbow 30s ease infinite;
+    -z-animation: rainbow 30s ease infinite;
+    -o-animation: rainbow 30s ease infinite;
+        animation: rainbow 30s ease infinite;
+    }
+    #wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    @-webkit-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @-moz-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @-o-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @keyframes rainbow { 
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    } */

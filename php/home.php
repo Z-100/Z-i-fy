@@ -1,8 +1,8 @@
 <?php
-    require_once("../classes/session_start.php");
+    require_once("../functions/session_start.php");
     require_once("../functions/auth_check.php");
-    require_once("../imageAlg/dominantColour.php");
-    require_once("config.php");
+    require_once("../Algorythm/dominantColour.php");
+    require_once("../functions/config.php");
 
 ?>
 

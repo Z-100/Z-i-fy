@@ -1,30 +1,27 @@
 <script>
-        /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
         }
 
-        // Close the dropdown menu if the user clicks outside of it
         window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+                }
             }
-            }
-        }
         }
     </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../css/style.css">
 
 <?php
-    require_once("../php/config.php");
-    require_once("session_start.php");
+    require_once("../functions/config.php");
+    require_once("../functions/session_start.php");
 
     $id = $_SESSION['id'];
    
@@ -55,6 +52,7 @@
 
                     }
                     echo "<div id=myDropdown class=dropdown-content>";
+                    echo "<a href=../php/account.php>Account</a>";
                         echo "<a href=../functions/logout.php>Logut</a>";
                             if ($row['admin'] == 1) {
                                 echo "<a href=../php/adminPanel.php>admin</a>";

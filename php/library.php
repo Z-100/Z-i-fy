@@ -1,6 +1,7 @@
 <?php
     require_once("../functions/auth_check.php");
-    require_once("../imageAlg/dominantColour.php");
+    require_once("../Algorythm/dominantColour.php");
+    require_once("../functions/config.php");
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +34,6 @@
 
         <div id="main-items">
             <?php
-                require_once "config.php";
                 $sql = "SELECT *
                         FROM playlists 
                         WHERE user_id = (SELECT id FROM users WHERE id =" . $_SESSION['id'] . ")";

@@ -1,5 +1,6 @@
 <?php
     require_once("../functions/auth_check.php");
+    require_once("../functions/config.php");
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +33,6 @@
 
         <div id="songList">
             <?php
-                require_once "config.php";
                 $sql = "SELECT songs.id, songs.title, albums.name, artists.band, songs.duration 
                         FROM songs
                             JOIN albums ON albums.id = songs.albums_id
