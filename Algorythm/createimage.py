@@ -6,20 +6,26 @@ import mysql.connector
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="root",
+  password="",
   database="zify"
 )
 
 mycursor = mydb.cursor()
 
-mycursor.execute("SELECT * FROM customers")
+mycursor.execute("SELECT thumbnail FROM songs WHERE id=1")
 
-myresult = mycursor.fetchall()
+result = mycursor.fetchall()
 
-for x in myresult:
-  print(x)
+for row in myresult:
 
-# images = [Image.open(x) for x in ['./Database/samplePics/inutero.jpg', './Database/samplePics/nevermind.jpg', './Database/samplePics/pfp.jpg', './Database/samplePics/samplePlaylist.jpg']] #Change to DB output
+
+
+file = request.files[row['thumbnail']]
+img = Image.open(file.stream)
+img.show()
+img.save("imagefile.jpg")
+
+# images = [Image.open(x) for x in [row['thumbnail'], row['thumbnail'], row['thumbnail'], row['thumbnail']]]
 # widths, heights = zip(*(i.size for i in images))
 
 # total_width = sum(widths)

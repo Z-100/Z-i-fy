@@ -1,23 +1,5 @@
-<script>
-        function userDropDown() {
-            document.getElementById("settingsDropDown").classList.toggle("show");
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../css/style.css">
 
 <?php
     require_once("../functions/config.php");

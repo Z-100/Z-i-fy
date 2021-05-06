@@ -4,9 +4,14 @@
         <div>     
             <div>
                 <h3>username</h3>
-                <p>field with username change</p>
-                <button>CONFIRM</button> <!-- SAVE, THEN OVERVIEW -->
-                <button>Cancel</button> <!-- overview link -->
+                <form action="../functions/editQueries.php" method="post">
+                    <label for="username">Enter a new username</label>
+                    <input type="text" name="username" placeholder="New username">
+                    <label for="">Enter password to confirm</label>
+                    <input type="password" name="password" placeholder="Enter password">
+                    <input type="submit" name="confirm" value="CONFIRM">
+                    <input type="submit" name="cancel" value="CANCEL">
+                </form>
             </div>   
         </div>
     </div>
