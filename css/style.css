@@ -14,6 +14,7 @@ body {
 
 /* MAIN ITEMS*/
     #blue-main {
+        background: linear-gradient(180deg, rgba(34, 34, 34) 0%, rgb(26, 26, 26) 65%, rgba(18,18,18) 100%);
         position: fixed;
         padding-left: 1.25vw;
         padding-right: 1.25vw;
@@ -21,10 +22,8 @@ body {
         right: 0;
         width: 78.75vw;
         height: 90vh;
-        overflow: scroll;
-    }
-    #blue-main::-webkit-scrollbar {
-        display: none;
+        overflow-x: hidden; /*horizontal scrollbar*/
+        overflow-y: scroll;
     }
     #grey-main {
         background: linear-gradient(180deg, rgba(180, 180, 180, 0.719) 8%, rgb(87, 87, 87) 50%, rgba(0,0,0,1) 96%);
@@ -35,10 +34,24 @@ body {
         right: 0;
         width: 78.75vw;
         height: 90vh;
-        overflow: scroll;
+        overflow-x: hidden; /*horizontal scrollbar*/
+        overflow-y: scroll;
     }
-    #grey-main::-webkit-scrollbar {
-        display: none;
+    #grey-main::-webkit-scrollbar, #blue-main::-webkit-scrollbar {
+        width: 0.9em;
+    }
+
+    #grey-main::-webkit-scrollbar-track, #blue-main::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    }
+
+    #grey-main::-webkit-scrollbar-thumb, #blue-main::-webkit-scrollbar-thumb {
+        background-color: rgb(97, 97, 97, 0.69);
+        transition: 0.69s;
+    }
+    #grey-main::-webkit-scrollbar-thumb:hover, #blue-main::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(163, 163, 163, 0.69);
+        outline: 1px solid slategrey;
     }
 
 /* STUFF ON EVERY PAGE */
@@ -46,7 +59,7 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: start;
+            /* justify-content: start; */
             width: 21.25vw;
             height: 100vh;
             margin: 0;
@@ -59,11 +72,11 @@ body {
             justify-content: center;
             margin-top: 2%;
             width: 100%;
-            height: 15%;
+            /* height: 15%; */
         }
         #left #left-top #logo {
             width: 60%;
-            height: 100%;
+            /* height: 100%; */
         }
         #left #playlist {
             display: flex;
@@ -115,34 +128,41 @@ body {
             width: 100%;
             height: 95%;
             margin-top: 1.25vh;
-            display: grid;
+            /* display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(3, 50vh);
             grid-column-gap: 1.25vw;
-            grid-row-gap: 2.5vh;
+            grid-row-gap: 2.5vh; */
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: baseline;
+            align-content: stretch;
         }
         .main-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding-top: 2%;
-            height: 2fr;
-            width: 1fr;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-top: 0.1vw solid rgba(255, 255, 255, 0.5);
-            border-left: 0.1vw solid rgba(255, 255, 255, 0.5);
+            margin: 2vh;
+
+            -webkit-box-shadow: 0px 0px 11px 1px #000000; 
+            box-shadow: 0px 0px 11px 1px rgb(44, 44, 44);
+            height: 30vh;
+            width: 20vh;
+            background-color: rgb(29, 29, 29);
             backdrop-filter: blur(1vw);
             border-radius: 7.5%;
             transition: 0.3s ease;
         }
         .main-item:hover {
             /* transition:  */
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(40, 40, 40);
         }
         #blue-main img#plp {
-            width: 30vh;
-            height: 30vh;
+            width: 20vh;
+            height: 20vh;
             padding: 2vh;
         }
 
@@ -328,6 +348,63 @@ body {
     input:focus { 
         box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); 
     }
+
+/* JAVASCRIPT STUFF*/
+#searchInput {
+    background-image: url("/css/searchicon.png"); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 30%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+  }
+  /* Dropdown Button */
+  .dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd}
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+
 
 /* Rainbow shit */
     /* .wrapper { 

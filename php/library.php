@@ -1,6 +1,6 @@
 <?php
     require_once("../functions/auth_check.php");
-    require_once("../Algorythm/dominantColour.php");
+    // require_once("../Algorythm/dominantColour.php");
     require_once("../functions/config.php");
 ?>
 
@@ -25,7 +25,7 @@
         </div>
     </nav>
 
-    <div id="blue-main" style="background: linear-gradient(180deg, <?php echo $hex1; ?> 8%, <?php echo $hex2; ?> 50%, rgba(0,0,0,1) 96%)">
+    <div id="blue-main">
         <div id="top">
             <div id="userField">
                 <?php require_once("../classes/userField.php"); ?>
@@ -46,7 +46,7 @@
                         imagejpeg($image, null, 80);
                         $data = ob_get_contents();
                         ob_end_clean();
-                        echo '<div class=main-item><img  id="plp" src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . '<p>' . $row['name'] . '</p></div>';
+                        echo '<div class=main-item><img  id="plp" src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . '<h2>' . $row['name'] . '</h2></div>';
                         //Use img#pfp in .css file
                     }
                 } else {

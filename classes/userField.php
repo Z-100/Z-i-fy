@@ -1,6 +1,6 @@
 <script>
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
+        function userDropDown() {
+            document.getElementById("settingsDropDown").classList.toggle("show");
         }
 
         window.onclick = function(event) {
@@ -38,10 +38,10 @@
             ob_end_clean();
                 echo "<div id=userField class=dropdown>";
                     if(isset($row['pfp'])) {
-                        echo '<button onclick=myFunction() class=dropbtn><img id=pfp src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . '<p>' . $row['username'] . '</p></button>';
+                        echo '<button onclick=userDropDown() class=dropbtn><img id=pfp src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . '<p>' . $row['username'] . '</p></button>';
                     } else {
 
-                        echo '<button onclick=myFunction() class=dropbtn>' ?>                    
+                        echo '<button onclick=userDropDown() class=dropbtn>' ?>                    
                             <svg viewbox="0 0 100 100" height="60" xmlns="http://www.w3.org/2000/svg">
                                 <g>
                                     <ellipse stroke="none" ry="49.98086" rx="49.91482" id="svg_2" cy="50.08466" cx="50.0946" fill="#5a5a5a"/>
@@ -51,7 +51,7 @@
                         <?php '<p>' . $row['username'] . '</p></button>'; 
 
                     }
-                    echo "<div id=myDropdown class=dropdown-content>";
+                    echo "<div id=settingsDropDown class=dropdown-content>";
                     echo "<a href=../php/account.php>Account</a>";
                         echo "<a href=../functions/logout.php>Logut</a>";
                             if ($row['admin'] == 1) {

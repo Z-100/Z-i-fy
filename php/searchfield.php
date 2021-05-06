@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="../functions/javascript.js" language="javascript"></script>
     <?php require_once("../classes/head.html"); ?>
     <title>Z-i-fy - Search</title>
 </head>
@@ -26,6 +27,17 @@
 
     <div id="grey-main">
         <div id="top">
+            <div class="searchbar">
+              <input type="text" id="searchInput" onkeyup="searchBar()" placeholder="Search for..">
+              
+              <select id="searchFilter">
+                    <option value="">Search by</option>
+                    <option value="1">TITLE</option>
+                    <option value="2">ALBUM</option>
+                    <option value="3">ARTIST</option>
+                </select>
+            </div>
+
             <div id="userField">
                 <?php require_once("../classes/userField.php"); ?>
             </div>
@@ -35,14 +47,14 @@
             <?php
                 $sql = "SELECT songs.id, songs.title, albums.name, artists.band, songs.duration 
                         FROM songs
-                            JOIN albums ON albums.id = songs.albums_id
-                            JOIN songs_artists ON songs.id = songs_artists.songs_id
-                            JOIN artists ON artists.id = songs_artists.artists_id";
+                            JOIN albums ON albums.id = songs.album_id
+                            JOIN songs_artists ON songs.id = songs_artists.song_id
+                            JOIN artists ON artists.id = songs_artists.artist_id";
 
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                         echo "<div id=searchfieldList>";
-                            echo "<table class=styled-table>";
+                            echo "<table id=searchFieldTable class=styled-table>";
                                 echo "<thead>";
                                     echo "<tr>";
                                         echo "<th id=count>#</th>";
@@ -74,7 +86,6 @@
                 $conn->close();
             ?>
         </div>
-        
     </div>
 
     <div id="player">
