@@ -2,6 +2,19 @@
     require_once("../functions/auth_check.php");
     // require_once("../Algorythm/dominantColour.php");
     require_once("../functions/config.php");
+    require_once("../functions/session_start.php");
+
+    $plName = @$_POST['plName'];
+    $plDesc = @$_POST['plDesc'];
+    $defaultPlp = file_get_contents('../Database/samplePics/plp.jpg');
+    $id = $_SESSION['id'];
+
+    $sql2 = "INSERT INTO playlists (name, user_id, plp, description) VALUES (?,?,?,?)";
+    
+    $stmt = $conn->prepare($sql2);
+    $stmt->bind_param("siss", $plName, $id, $defaultPlp, $plDesc);
+
+    $stmt->execute();
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +40,14 @@
 
     <div id="blue-main">
         <div id="top">
+        <div class="addPlaylist">
+        <form action="" method="post">
+            <input type="text" name="plName" placeholder="Enter playlist name">
+            <input type="text" name="plDesc" placeholder="Enter playlist description">
+            <input type="submit" placeholder="Create playlist">
+        </form>
+    </div>
+
             <div id="userField">
                 <?php require_once("../classes/userField.php"); ?>
             </div>
@@ -34,11 +55,11 @@
 
         <div id="main-items">
             <?php
-                $sql = "SELECT *
+                $sql1 = "SELECT *
                         FROM playlists 
                         WHERE user_id = (SELECT id FROM users WHERE id =" . $_SESSION['id'] . ")";
 
-                $result = $conn->query($sql);
+                $result = $conn->query($sql1);
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         $image = imagecreatefromstring($row['plp']); 
@@ -55,6 +76,7 @@
             ?>
         </div>
     </div>
+
     <div id="player">
         <?php require_once("../classes/player.php"); ?>
     </div>
