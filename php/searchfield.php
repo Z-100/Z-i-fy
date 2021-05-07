@@ -6,7 +6,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="../functions/javascript.js" language="javascript"></script>
     <?php require_once("../classes/head.html"); ?>
     <title>Z-i-fy - Search</title>
 </head>
