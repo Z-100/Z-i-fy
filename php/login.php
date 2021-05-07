@@ -24,7 +24,7 @@
             <form id="input" action="../functions/login.php" method="post">
                 <input type="text" id="username" name="username" placeholder="enter username">
                 <input type="password" id="password" name="password" placeholder="enter password">
-                <input type="submit">
+                <input type="submit" value="Log in">
             </form>
         </div>
         
@@ -38,7 +38,7 @@
                 <input type="password" id="crpassword" name="crpassword" placeholder="create password">
                 <input type="password" id="cfpassword" name="cfpassword" placeholder="confirm password">
                 <input type="text" id="token" name="token" placeholder="enter token">
-                <input type="submit">
+                <input type="submit" value="Register">
             </form>
         </div>
     </div>
