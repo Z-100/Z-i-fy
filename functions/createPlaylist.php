@@ -6,11 +6,11 @@
     $plDesc = @$_POST['plDesc'];
     $defaultPlp = file_get_contents('../Database/samplePics/plp.jpg');
     $id = $_SESSION['id'];
-    $PATH = "../playlists/";
+    // $PATH = "../playlists/";
     $UUID = uniqid();
-    $default = file_get_contents("../classes/defaultPlaylist.php");
+    // $default = file_get_contents("../classes/defaultPlaylist.php");
 
-    $newFile = fopen($PATH . $UUID . ".php", "w") or die("Unable to create playlist");
+    // $newFile = fopen($PATH . $UUID . ".php", "w") or die("Unable to create playlist");
     fwrite($newFile, $default);
 
     $sql2 = "INSERT INTO playlists (name, user_id, plp, description, uuid) VALUES (?,?,?,?,?)";

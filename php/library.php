@@ -56,8 +56,7 @@
                         imagejpeg($image, null, 80);
                         $data = ob_get_contents();
                         ob_end_clean();
-                        echo '<a href=../playlists/' . $UUID . '.php?uuid=' . $UUID . '><div class=main-item><img  id="plp" src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . '<h2>' . $row['name'] . '</h2></div></a>';
-                        //Use img#pfp in .css file
+                        echo '<a class=main-item href=playlists.php?uuid=' . $UUID . '><img  id="plp" src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . '<h2>' . $row['name'] . '</h2></a>';
                     }
                 } else {
 

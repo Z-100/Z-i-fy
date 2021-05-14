@@ -72,7 +72,6 @@
                                             echo "<td>" . $row['name'] . "</td>";
                                             echo "<td>" . $row['band'] . "</td>";
                                             echo "<td>" . $row['duration'] . "</td>";
-                                            echo "</td>";
                                         echo "</tr>";
                                     }
                                 echo "</tbody>";
