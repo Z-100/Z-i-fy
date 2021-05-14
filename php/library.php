@@ -3,18 +3,6 @@
     // require_once("../Algorythm/dominantColour.php");
     require_once("../functions/config.php");
     require_once("../functions/session_start.php");
-
-    $plName = @$_POST['plName'];
-    $plDesc = @$_POST['plDesc'];
-    $defaultPlp = file_get_contents('../Database/samplePics/plp.jpg');
-    $id = $_SESSION['id'];
-
-    $sql2 = "INSERT INTO playlists (name, user_id, plp, description) VALUES (?,?,?,?)";
-    
-    $stmt = $conn->prepare($sql2);
-    $stmt->bind_param("siss", $plName, $id, $defaultPlp, $plDesc);
-
-    $stmt->execute();
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +29,7 @@
     <div id="blue-main">
         <div id="top">
         <div class="addPlaylist">
-        <form action="" method="post">
+        <form action="../functions/createPlaylist.php" method="post">
             <input type="text" name="plName" placeholder="Enter playlist name">
             <input type="text" name="plDesc" placeholder="Enter playlist description">
             <input type="submit" placeholder="Create playlist">
@@ -62,12 +50,13 @@
                 $result = $conn->query($sql1);
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
+                        $UUID = $row['uuid'];
                         $image = imagecreatefromstring($row['plp']); 
                         ob_start();
                         imagejpeg($image, null, 80);
                         $data = ob_get_contents();
                         ob_end_clean();
-                        echo '<div class=main-item><img  id="plp" src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . '<h2>' . $row['name'] . '</h2></div>';
+                        echo '<a href=../playlists/' . $UUID . '.php?uuid=' . $UUID . '><div class=main-item><img  id="plp" src="data:image/jpg;base64,' . base64_encode($data) . '"/>' . '<h2>' . $row['name'] . '</h2></div></a>';
                         //Use img#pfp in .css file
                     }
                 } else {
