@@ -15,7 +15,7 @@
 <body>
     <nav id ="left">
         <div id="left-top">
-            <img src="../img/z-i-fy_trans.png" alt="logo" id="logo"">
+            <img src="../img/z-i-fy_trans.png" alt="logo" id="logo">
         </div>
 
         <div id="nav-mid">
